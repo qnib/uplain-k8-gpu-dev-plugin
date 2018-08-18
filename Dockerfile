@@ -30,4 +30,5 @@ WORKDIR /go/src/github.com/NVIDIA/nvidia-device-plugin
 RUN git checkout -b v1.8 remotes/origin/v1.8
 RUN export CGO_LDFLAGS_ALLOW='-Wl,--unresolved-symbols=ignore-in-object-files' \
  && go install -ldflags="-s -w"
+LABEL houdini.user.keep=true
 CMD ["nvidia-device-plugin"]
